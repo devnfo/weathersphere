@@ -11,7 +11,7 @@ pipeline {
     stage('Clone Repo') {
       steps {
         bat 'git config --global http.sslVerify false'
-        git branch: 'main', url: 'https://github.com/devnfo/weatherupdate.git'
+        git branch: 'main', url: 'https://github.com/devnfo/weathersphere.git'
       }
     }
 
