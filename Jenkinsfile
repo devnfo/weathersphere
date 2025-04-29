@@ -3,8 +3,8 @@ pipeline {
 
   environment {
     IMAGE_NAME = "weatherupdate"
-    DOCKER_HUB_USER = "dev637"  // Correct Docker Hub username
-    RANDOM_PORT = "8081"        // Random port chosen to avoid conflicts
+    DOCKER_HUB_USER = "dev637"       //  Docker Hub username
+    RANDOM_PORT = "8081"             // Port mapping for the container
   }
 
   stages {
@@ -17,10 +17,7 @@ pipeline {
 
     stage('Build Docker Image') {
       steps {
-        bat """
-          set DOCKER_BUILDKIT=0
-          docker build -t %IMAGE_NAME% .
-        """
+        bat 'docker build -t %IMAGE_NAME% .'
       }
     }
 
